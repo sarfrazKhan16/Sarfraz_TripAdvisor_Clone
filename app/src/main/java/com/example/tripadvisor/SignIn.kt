@@ -27,45 +27,6 @@ class SignIn : AppCompatActivity() {
             insets
         }
 
-        val textView : TextView = findViewById(R.id.textView)
-        val button : Button = findViewById(R.id.button)
-        val emailEt : EditText = findViewById(R.id.emailEt)
-        val passET : EditText = findViewById(R.id.passET)
-
-        id = intent.getIntExtra("ID", -1)
-        Log.d("SignInActivity", "Received ID: $id")
-
-
-        firebaseAuth = FirebaseAuth.getInstance()
-        textView.setOnClickListener {
-            val intent = Intent(this, SignUp::class.java)
-            startActivity(intent)
-        }
-
-        button.setOnClickListener {
-            val email = emailEt.text.toString()
-            val pass = passET.text.toString()
-
-            if (email.isNotEmpty() && pass.isNotEmpty()) {
-                firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener {
-                    if (it.isSuccessful) {
-                        val intent = Intent(this, MainActivity::class.java)
-                        intent.putExtra("ID", id)  // Pass ID here
-                        startActivity(intent)
-                        finish()  // Optional: finish the SignIn activity if not needed anymore
-                    } else {
-                        Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
-                    }
-                }
-            } else {
-                Toast.makeText(this, "Empty Fields Are not Allowed !!", Toast.LENGTH_SHORT).show()
-            }
-        }
-
-    }
-    fun receiveDataFromFragment(receivedId: Int) {
-
-        id=receivedId
-        Log.d("Sig In Activity", "Data received: $id")
+        
     }
 }
