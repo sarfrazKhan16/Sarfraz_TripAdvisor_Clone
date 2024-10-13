@@ -18,18 +18,7 @@ class SignUp : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_sign_up)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
 
-        firebaseAuth = FirebaseAuth.getInstance()
-        val textView: TextView = findViewById(R.id.textView)
-        val button: Button = findViewById(R.id.button)
-        val emailEt: EditText = findViewById(R.id.emailEt)
-        val passET: EditText = findViewById(R.id.passET)
-        val confirmPassEt: EditText = findViewById(R.id.confirmPassEt)
 
 
     }
