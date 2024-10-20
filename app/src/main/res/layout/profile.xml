@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000000"
@@ -8,7 +9,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:ignore="ExtraText">
 
         <!-- Profile Picture Section -->
         <RelativeLayout
@@ -29,7 +31,7 @@
                 android:id="@+id/profile_image"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                
+
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/circle_background"
                 android:layout_marginTop="35dp"/>
@@ -129,17 +131,23 @@
             android:padding="12dp" />
 
         <!-- Save Button -->
+        <!-- Save Button -->
         <Button
             android:id="@+id/save_button"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
+            android:minHeight="48dp"
             android:text="Save"
-            android:backgroundTint="#FFFFFF"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="32dp"
-            android:padding="12dp"/>
+            android:hint="Save changes..."
+            tools:ignore="HardcodedText" /> <!-- Speakable content for accessibility -->
+        android:backgroundTint="#FFFFFF"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="32dp"
+        android:padding="12dp"/>
+
+
 
     </LinearLayout>
 </FrameLayout>

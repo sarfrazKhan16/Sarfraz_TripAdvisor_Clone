@@ -16,36 +16,15 @@
         android:theme="@style/Theme.TripAdvisor"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-        <activity
-            android:name=".webView"
-            android:exported="false" />
-        <activity
-            android:name=".passwordChange"
-            android:exported="false" />
+
         <activity
             android:name=".SignUp"
             android:exported="false" />
         <activity
             android:name=".SignIn"
             android:exported="false" />
-        <activity
-            android:name=".MoreResturantDetails"
-            android:exported="false" />
-        <activity
-            android:name=".ResturantDetail"
-            android:exported="false" />
-        <activity
-            android:name=".AddMissingPlaceActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MoreHotelDetails"
-            android:exported="false" />
-        <activity
-            android:name=".AdventureDetails"
-            android:exported="false" />
-        <activity
-            android:name=".HotelDetail"
-            android:exported="false" />
+
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
