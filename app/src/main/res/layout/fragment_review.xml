@@ -133,6 +133,7 @@
                     android:textColor="#FFFFFF"
                     android:textSize="23dp"
                     android:textStyle="bold" />
+
                 <Button
                     android:id="@+id/addbtn"
                     android:layout_width="270dp"
@@ -141,12 +142,7 @@
                     android:textColor="@color/black"
                     android:backgroundTint="@color/white"
                     android:textSize="15dp"
-                    android:text="@string/add_missing_adventure"
-                    android:contentDescription="@string/add_missing_adventure_description"
-                    tools:ignore="HardcodedText" />
-
-
-
+                    android:text="Add a missing adventure " />
             </LinearLayout>
 
         </LinearLayout>

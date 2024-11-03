@@ -16,6 +16,10 @@ import androidx.recyclerview.widget.RecyclerView
 class SearchFragment : Fragment() {
 
 
+    private lateinit var searchBox: EditText
+    private lateinit var hotelRecyclerView: RecyclerView
+    private lateinit var restaurantRecyclerView: RecyclerView
+
     private lateinit var emptyImageView: ImageView
 
     override fun onCreateView(
@@ -23,6 +27,33 @@ class SearchFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_search, container, false)
-      return null
+
+
+        searchBox = view.findViewById(R.id.search_box)
+        hotelRecyclerView = view.findViewById(R.id.hotelRecycleView)
+        restaurantRecyclerView = view.findViewById(R.id.resturantRecycleView)
+        emptyImageView = view.findViewById(R.id.iv_empty)
+
+        hotelRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+        restaurantRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+
+        val searchID = arguments?.getInt("searchID")
+
+        when (searchID) {
+            11 -> {
+                searchBox.hint = "Search Hotel"
+                hotelRecyclerView.visibility = View.VISIBLE
+                restaurantRecyclerView.visibility = View.GONE
+            }
+
+            else -> {
+                searchBox.hint = "Search Restaurant"
+                restaurantRecyclerView.visibility = View.VISIBLE
+                hotelRecyclerView.visibility = View.GONE
+            }
+        }
+
+
+        return TODO("Provide the return value")
     }
-}
+        }

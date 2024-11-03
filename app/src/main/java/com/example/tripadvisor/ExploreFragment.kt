@@ -27,7 +27,7 @@ class ExploreFragment : Fragment() {
 
     private var receivedId: Int? = null
 
-
+    private lateinit var rest: List<resturant>
 
 
     override fun onCreateView(
@@ -42,43 +42,11 @@ class ExploreFragment : Fragment() {
             receivedId = it.getInt("ID", -1)  // Default value is -1 if not found
         }
 
-        val hotelbtn=view.findViewById<Button>(R.id.hotelExplore)
-        val resturantbtn=view.findViewById<Button>(R.id.restruantExplore)
-        val keepExplore=view.findViewById<Button>(R.id.keepExplore)
-
-        hotelbtn.setOnClickListener {
-
-            navigateToSearchFragment(11)
-        }
-        resturantbtn.setOnClickListener {
-            navigateToSearchFragment(12)
-        }
-        keepExplore.setOnClickListener {
-            startActivity(Intent(context,webView::class.java))
-        }
 
 
 
         // Initialize RecyclerView
-
-
-
-
-
-        return view
-    }
-    private fun navigateToSearchFragment(searchID: Int) {
-        val searchFragment = SearchFragment()
-
-        val bundle = Bundle()
-        bundle.putInt("searchID", searchID) // Pass the searchID to the fragment
-
-        // Set the arguments for the fragment
-        searchFragment.arguments = bundle
-
-        parentFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, searchFragment)
-            .addToBackStack(null)
-            .commit()
+        return TODO("Provide the return value")
     }
 }
+
